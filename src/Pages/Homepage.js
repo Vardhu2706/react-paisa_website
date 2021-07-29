@@ -4,12 +4,14 @@
 import React, { useState } from "react";
 
 // Importing Components
-import NavBarComponent from "./NavBarComponent";
-import SideBarComponent from "./SideBarComponent";
-import HeroComponent from "./HeroComponent";
+import NavBarComponent from "../Components/NavBarComponent";
+import SideBarComponent from "../Components/SideBarComponent";
+import HeroComponent from "../Components/HeroComponent";
+import InfoSection from "../Components/InfoComponent";
+import { InfoSectionOne } from "../Data";
 
 // Functional Component
-const NavbarSidebarContainer = () => {
+const Homepage = () => {
   //State Variables
   const [isOpen, setIsOpen] = useState(false);
 
@@ -23,9 +25,10 @@ const NavbarSidebarContainer = () => {
       <SideBarComponent isOpen={isOpen} toggleOnHover={toggleOnHover} />
       <NavBarComponent toggleOnHover={toggleOnHover} />
       <HeroComponent />
+      <InfoSection {...InfoSectionOne} />
     </>
   );
 };
 
 // Default Export
-export default NavbarSidebarContainer;
+export default Homepage;

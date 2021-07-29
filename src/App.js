@@ -7,14 +7,16 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 
 // Importing Components
-import NavbarSidebarContainer from "./components/NavbarSidebarContainer";
+import Homepage from "./Pages/Homepage";
 
 // Functional Component
 function App() {
   return (
-    <Router>
-      <NavbarSidebarContainer />
-    </Router>
+    <>
+      <Router>
+        <Homepage />
+      </Router>
+    </>
   );
 }
 
