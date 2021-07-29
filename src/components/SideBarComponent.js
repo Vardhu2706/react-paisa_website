@@ -22,9 +22,8 @@ const SidebarContainer = styled.aside`
   top: 0;
   left: 0;
   transition: 0.3s ease-in-out;
-  /* opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
-  top: ${({ isOpen }) => (isOpen ? "0" : "-100%")}; */
-  top: 0;
+  opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
+  top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
 `;
 
 // Icon Style Definitions
@@ -106,18 +105,26 @@ const SidebarRoute = styled(LinkR)`
 `;
 
 // Functional Component
-const SideBarComponent = () => {
+const SideBarComponent = ({ isOpen, toggleOnHover }) => {
   return (
-    <SidebarContainer>
-      <Icon>
+    <SidebarContainer isOpen={isOpen} onClick={toggleOnHover}>
+      <Icon onClick={toggleOnHover}>
         <CloseIcon />
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLink to="about">About</SidebarLink>
-          <SidebarLink to="discover">Discover</SidebarLink>
-          <SidebarLink to="services">Services</SidebarLink>
-          <SidebarLink to="signup">Sign Up</SidebarLink>
+          <SidebarLink to="about" onClick={toggleOnHover}>
+            About
+          </SidebarLink>
+          <SidebarLink to="discover" onClick={toggleOnHover}>
+            Discover
+          </SidebarLink>
+          <SidebarLink to="services" onClick={toggleOnHover}>
+            Services
+          </SidebarLink>
+          <SidebarLink to="signup" onClick={toggleOnHover}>
+            Sign Up
+          </SidebarLink>
         </SidebarMenu>
         <SideBtnWrap>
           <SidebarRoute to="/signin">Sign In</SidebarRoute>

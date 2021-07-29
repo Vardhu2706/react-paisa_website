@@ -12,7 +12,7 @@ import { FaBars } from "react-icons/fa";
 const Nav = styled.nav`
   background: #000;
   height: 80px;
-  /* margin-top: -80px; */
+  margin-top: -80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,18 +131,15 @@ const NavBtnLink = styled(LinkR)`
 `;
 
 // Functional Component
-const NavBarComponent = () => {
+const NavBarComponent = ({ toggleOnHover }) => {
   return (
     <>
       <Nav>
         <NavBarContainer>
           <NavLogo to="/">PAISA</NavLogo>
-          {/* Menu Icon */}
-          <MobileIcon>
+          <MobileIcon onClick={toggleOnHover}>
             <FaBars />
           </MobileIcon>
-
-          {/* Menu Items */}
           <NavMenu>
             <NavItem>
               <NavLink to="about">About</NavLink>

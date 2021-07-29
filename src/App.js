@@ -7,17 +7,16 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 
 // Importing Components
-import NavBarComponent from "./components/NavBarComponent";
-import Sidebar from "./components/SideBarComponent";
+import NavbarSidebarContainer from "./components/NavbarSidebarContainer";
 
 // Functional Component
 function App() {
   return (
     <Router>
-      <Sidebar />
-      <NavBarComponent />
+      <NavbarSidebarContainer />
     </Router>
   );
 }
 
+// Default Export
 export default App;
