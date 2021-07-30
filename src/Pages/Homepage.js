@@ -8,7 +8,8 @@ import NavBarComponent from "../Components/NavBarComponent";
 import SideBarComponent from "../Components/SideBarComponent";
 import HeroComponent from "../Components/HeroComponent";
 import InfoSection from "../Components/InfoComponent";
-import { InfoSectionOne } from "../Data";
+import { InfoSectionOne, InfoSectionTwo, InfoSectionThree } from "../Data";
+import ServicesComponent from "../Components/ServicesComponent";
 
 // Functional Component
 const Homepage = () => {
@@ -26,6 +27,9 @@ const Homepage = () => {
       <NavBarComponent toggleOnHover={toggleOnHover} />
       <HeroComponent />
       <InfoSection {...InfoSectionOne} />
+      <InfoSection {...InfoSectionTwo} />
+      <ServicesComponent />
+      <InfoSection {...InfoSectionThree} />
     </>
   );
 };
