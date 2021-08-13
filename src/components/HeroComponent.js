@@ -134,9 +134,9 @@ const HeroComponent = () => {
 
   // Return
   return (
-    <HeroContainer>
+    <HeroContainer id="home">
       <HeroBG>
-        <VideoBG loop muted src={Video} type="video/mp4" />
+        <VideoBG loop muted autoPlay src={Video} type="video/mp4" />
       </HeroBG>
       <HeroContent>
         <HeroH1>Virtual Banking Made Easy</HeroH1>

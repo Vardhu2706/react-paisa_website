@@ -12,7 +12,7 @@ import { FaBars } from "react-icons/fa";
 const Nav = styled.nav`
   background: #000;
   height: 80px;
-  margin-top: -80px;
+  /* margin-top: -80px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,7 @@ const NavBarContainer = styled.div`
 `;
 
 // NavLogo Styles Definitions
-const NavLogo = styled(LinkS)`
+const NavLogo = styled(LinkR)`
   color: #fff;
   justify-self: flex-start;
   cursor: pointer;
