@@ -1,5 +1,6 @@
 // NavBar Component
 // Importing Helpers
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link as LinkS } from "react-scroll";
 import { Link as LinkR } from "react-router-dom";
@@ -12,7 +13,7 @@ import { FaBars } from "react-icons/fa";
 const Nav = styled.nav`
   background: #000;
   height: 80px;
-  /* margin-top: -80px; */
+  margin-top: -80px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,9 +133,26 @@ const NavBtnLink = styled(LinkR)`
 
 // Functional Component
 const NavBarComponent = ({ toggleOnHover }) => {
+  // State Variables
+  const [scrollNav, setScrollNav] = useState(false);
+
+  // Handle Smooth Scroll
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
+
+  // UseEffect
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav);
+  }, []);
+
   return (
     <>
-      <Nav>
+      <Nav scrollNav={scrollNav}>
         <NavBarContainer>
           <NavLogo to="/">PAISA</NavLogo>
           <MobileIcon onClick={toggleOnHover}>

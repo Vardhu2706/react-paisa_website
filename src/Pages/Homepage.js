@@ -4,6 +4,7 @@
 import React, { useState } from "react";
 
 // Importing Components
+import NavBarComponent from "../Components/NavBarComponent";
 import SideBarComponent from "../Components/SideBarComponent";
 import HeroComponent from "../Components/HeroComponent";
 import InfoSection from "../Components/InfoComponent";
@@ -23,6 +24,7 @@ const Homepage = () => {
 
   return (
     <>
+      <NavBarComponent toggleOnHover={toggleOnHover} />
       <SideBarComponent isOpen={isOpen} toggleOnHover={toggleOnHover} />
       <HeroComponent />
       <InfoSection {...InfoSectionOne} />

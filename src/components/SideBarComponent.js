@@ -12,7 +12,7 @@ import { FaTimes } from "react-icons/fa";
 // Style Definitions
 // Sidebar Container Definitions
 const SidebarContainer = styled.aside`
-  position: absolute;
+  position: fixed;
   z-index: 999;
   width: 100%;
   height: 100%;
