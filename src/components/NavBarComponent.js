@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link as LinkS } from "react-scroll";
 import { Link as LinkR } from "react-router-dom";
+import { IconContext } from "react-icons/lib";
+import { animateScroll as scroll } from "react-scroll";
 
 // Importing Components
 import { FaBars } from "react-icons/fa";
@@ -11,9 +13,9 @@ import { FaBars } from "react-icons/fa";
 // Styled Components
 // Nav Styles Definitions
 const Nav = styled.nav`
-  background: #000;
+  background: ${({ scrollNav }) => (scrollNav ? "#000" : "transparent")};
   height: 80px;
-  margin-top: -80px; 
+  margin-top: -80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -145,31 +147,78 @@ const NavBarComponent = ({ toggleOnHover }) => {
     }
   };
 
-  // UseEffect
+  // UseEffect~
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
   }, []);
 
+  // Toggle Home
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
   return (
-    <>
+    <IconContext.Provider value={{ color: "#fff" }}>
       <Nav scrollNav={scrollNav}>
         <NavBarContainer>
-          <NavLogo to="/">PAISA</NavLogo>
+          <NavLogo to="/" onClick={toggleHome}>
+            PAISA
+          </NavLogo>
           <MobileIcon onClick={toggleOnHover}>
             <FaBars />
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLink to="about">About</NavLink>
+              <NavLink
+                to="about"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact="true"
+                offset={-80}
+                activeClass="active"
+              >
+                About
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="discover">Discover</NavLink>
+              <NavLink
+                to="discover"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact="true"
+                offset={-80}
+                activeClass="active"
+              >
+                Discover
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="services">Services</NavLink>
+              <NavLink
+                to="services"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact="true"
+                offset={-80}
+                activeClass="active"
+              >
+                Services
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="signup">Sign Up</NavLink>
+              <NavLink
+                to="signup"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact="true"
+                offset={-80}
+                activeClass="active"
+              >
+                Sign Up
+              </NavLink>
             </NavItem>
           </NavMenu>
           <NavBtn>
@@ -177,7 +226,7 @@ const NavBarComponent = ({ toggleOnHover }) => {
           </NavBtn>
         </NavBarContainer>
       </Nav>
-    </>
+    </IconContext.Provider>
   );
 };
 

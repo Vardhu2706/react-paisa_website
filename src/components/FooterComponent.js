@@ -4,6 +4,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { animateScroll as scroll } from "react-scroll";
 
 // Importing Components/Media
 import {
@@ -138,13 +139,18 @@ const SocialIconLink = styled.a`
   color: #fff;
   font-size: 24px;
 
-  &:hover{
+  &:hover {
     color: #01bf71;
   }
 `;
 
 // Functional Component
 function FooterComponent() {
+  // Toggle Home
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <FooterContainer>
       <FooterWrap>
@@ -185,7 +191,9 @@ function FooterComponent() {
         </FooterLinksContainer>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to="/">Paisa</SocialLogo>
+            <SocialLogo to="/" onClick={toggleHome}>
+              Paisa
+            </SocialLogo>
             <WebsiteRights>
               Paisa © {new Date().getFullYear()} All rights reserved.
             </WebsiteRights>
