@@ -177,7 +177,7 @@ function FooterComponent() {
               <FooterLinkTitle>Videos</FooterLinkTitle>
               <FooterLink to="/">Submit Video</FooterLink>
               <FooterLink to="/">Ambassadors</FooterLink>
-              <FooterLink to="/">Agency</FooterLink>
+              <FooterLink to="/">Affiliate</FooterLink>
               <FooterLink to="/">Influencer</FooterLink>
             </FooterLinkItems>
             <FooterLinkItems>
