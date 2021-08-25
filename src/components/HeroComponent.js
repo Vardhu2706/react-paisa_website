@@ -151,6 +151,12 @@ const HeroComponent = () => {
             onMouseLeave={toggleOnHover}
             primary="true"
             dark="true"
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            offset={-80}
+            activeClass="active"
           >
             Get started {hover ? <ArrowForward /> : <ArrowRight />}
           </Button>
