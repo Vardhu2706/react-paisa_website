@@ -2,12 +2,13 @@
 
 // Importing Helpers
 import React from "react";
+import SignInComponent from "../Components/SignInComponent";
 
 // Functional Component
 const SignInPage = () => {
   return (
     <>
-      <h1>Sign In Page</h1>
+      <SignInComponent />
     </>
   );
 };
